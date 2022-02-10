@@ -30,6 +30,12 @@ class Player {
       playerCount: count
     });
   }
-
+//Get Count from the database
+    getCount() {
+    var playerCountref = database.ref("playerCount");
+    playerCountref.on("value", data => {
+      playerCount = data.val();
+    });
+  }
   
 }
